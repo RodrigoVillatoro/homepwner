@@ -44,7 +44,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" rowHeight="65" id="5sy-x0-moY" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="5sy-x0-moY" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sy-x0-moY" id="mae-Y0-Ezl">
@@ -79,6 +79,11 @@
                                         <constraint firstItem="ynL-QK-XvB" firstAttribute="leading" secondItem="h8c-xI-I0I" secondAttribute="leading" id="Wof-ee-vJ2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="h8c-xI-I0I" id="1Qo-oT-yef"/>
+                                    <outlet property="serialNumberLabel" destination="ynL-QK-XvB" id="v87-BP-GlS"/>
+                                    <outlet property="valueLabel" destination="QFu-oI-J6j" id="BYB-NB-x45"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
