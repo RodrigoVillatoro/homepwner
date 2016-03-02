@@ -84,6 +84,7 @@
                                     <outlet property="nameLabel" destination="h8c-xI-I0I" id="1Qo-oT-yef"/>
                                     <outlet property="serialNumberLabel" destination="ynL-QK-XvB" id="v87-BP-GlS"/>
                                     <outlet property="valueLabel" destination="QFu-oI-J6j" id="BYB-NB-x45"/>
+                                    <segue destination="tn9-FJ-YS9" kind="show" identifier="ShowItem" id="o1s-lj-mRp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="353" y="431"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="g8Y-gf-xjM">
             <objects>
-                <viewController id="tn9-FJ-YS9" sceneMemberID="viewController">
+                <viewController id="tn9-FJ-YS9" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fa9-hQ-Yg8"/>
                         <viewControllerLayoutGuide type="bottom" id="LS1-mQ-1Fk"/>
@@ -147,20 +148,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1ZT-f6-QhI">
                                         <rect key="frame" x="0.0" y="76" width="560" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-tc-IcV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-tc-IcV">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44a-mn-gcJ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44a-mn-gcJ">
                                                 <rect key="frame" x="53" y="0.0" width="507" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwZ-XR-8Hm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwZ-XR-8Hm">
                                         <rect key="frame" x="0.0" y="114" width="560" height="450"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -187,10 +188,16 @@
                             <constraint firstItem="IKD-qH-6q9" firstAttribute="leading" secondItem="XmG-Eq-p0r" secondAttribute="leadingMargin" id="kDT-7q-4pn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="CwZ-XR-8Hm" id="7Cx-AJ-yDx"/>
+                        <outlet property="nameField" destination="vSa-x4-39v" id="JIf-yg-0Zt"/>
+                        <outlet property="serialNumberField" destination="kZA-ty-f9a" id="4g7-63-1fQ"/>
+                        <outlet property="valueField" destination="44a-mn-gcJ" id="CK0-tL-Il7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOG-Qq-QQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="432"/>
+            <point key="canvasLocation" x="1107" y="431"/>
         </scene>
     </scenes>
 </document>

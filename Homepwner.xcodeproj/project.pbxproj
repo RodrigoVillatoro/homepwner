@@ -16,6 +16,7 @@
 		AF5834581C8010E800729ACF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5834571C8010E800729ACF /* Item.swift */; };
 		AF6B92A81C80E1D600695974 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B92A71C80E1D600695974 /* ItemStore.swift */; };
 		AF6B92AA1C84117500695974 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AF6B92A91C84117500695974 /* .gitignore */; };
+		AFFDAC2D1C875FD0005674F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDAC2C1C875FD0005674F9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AF5834571C8010E800729ACF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AF6B92A71C80E1D600695974 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		AF6B92A91C84117500695974 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AFFDAC2C1C875FD0005674F9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				AF5834571C8010E800729ACF /* Item.swift */,
 				AF2BF0061C8553DF0063DC45 /* ItemCell.swift */,
 				AF5834551C80102300729ACF /* ItemsViewController.swift */,
+				AFFDAC2C1C875FD0005674F9 /* DetailViewController.swift */,
 				AF6B92A71C80E1D600695974 /* ItemStore.swift */,
 				AF5834471C800FCE00729ACF /* Main.storyboard */,
 				AF58344A1C800FCE00729ACF /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				AF5834561C80102300729ACF /* ItemsViewController.swift in Sources */,
 				AF5834581C8010E800729ACF /* Item.swift in Sources */,
 				AF6B92A81C80E1D600695974 /* ItemStore.swift in Sources */,
+				AFFDAC2D1C875FD0005674F9 /* DetailViewController.swift in Sources */,
 				AF5834441C800FCE00729ACF /* AppDelegate.swift in Sources */,
 				AF2BF0071C8553DF0063DC45 /* ItemCell.swift in Sources */,
 			);
