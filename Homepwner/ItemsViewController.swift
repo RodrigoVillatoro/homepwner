@@ -47,6 +47,10 @@ class ItemsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
+        
+        // Update cells for the new preferred text size
+        cell.updateLabels()
+        
         let item = itemStore.allItems[indexPath.row]
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
