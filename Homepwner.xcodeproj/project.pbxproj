@@ -64,14 +64,14 @@
 			isa = PBXGroup;
 			children = (
 				AF5834431C800FCE00729ACF /* AppDelegate.swift */,
+				AF5834571C8010E800729ACF /* Item.swift */,
+				AF2BF0061C8553DF0063DC45 /* ItemCell.swift */,
 				AF5834551C80102300729ACF /* ItemsViewController.swift */,
 				AF6B92A71C80E1D600695974 /* ItemStore.swift */,
 				AF5834471C800FCE00729ACF /* Main.storyboard */,
 				AF58344A1C800FCE00729ACF /* Assets.xcassets */,
 				AF58344C1C800FCE00729ACF /* LaunchScreen.storyboard */,
 				AF58344F1C800FCE00729ACF /* Info.plist */,
-				AF5834571C8010E800729ACF /* Item.swift */,
-				AF2BF0061C8553DF0063DC45 /* ItemCell.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";

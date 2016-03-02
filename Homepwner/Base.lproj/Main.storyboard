@@ -60,13 +60,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFu-oI-J6j">
                                             <rect key="frame" x="550" y="22" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-xI-I0I">
                                             <rect key="frame" x="8" y="8" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -77,6 +77,7 @@
                                         <constraint firstItem="QFu-oI-J6j" firstAttribute="centerY" secondItem="mae-Y0-Ezl" secondAttribute="centerY" id="Ri1-Y5-TCm"/>
                                         <constraint firstItem="h8c-xI-I0I" firstAttribute="leading" secondItem="mae-Y0-Ezl" secondAttribute="leadingMargin" id="Uc2-4f-NUa"/>
                                         <constraint firstItem="ynL-QK-XvB" firstAttribute="leading" secondItem="h8c-xI-I0I" secondAttribute="leading" id="Wof-ee-vJ2"/>
+                                        <constraint firstItem="ynL-QK-XvB" firstAttribute="top" secondItem="h8c-xI-I0I" secondAttribute="bottom" constant="9" id="i4X-sC-Rc4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
