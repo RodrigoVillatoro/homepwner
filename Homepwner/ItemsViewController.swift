@@ -24,20 +24,10 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        // If current mode is editing mode...
-        if editing {
-            // Change the text of the button
-            sender.setTitle("Edit", forState: .Normal)
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        }
-        else {
-            // Change the text of button
-            sender.setTitle("Done", forState: .Normal)
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,13 +59,6 @@ class ItemsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Get height of the status bar
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
