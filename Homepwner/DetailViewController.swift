@@ -8,15 +8,30 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     @IBAction func backgroundTapped(sender: AnyObject) {
         view.endEditing(true)
+    }
+    
+    @IBAction func takePicture(sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
     }
     
     var item: Item! {
@@ -71,4 +86,27 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        // Get picked image from dictionary
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Put that image on the screen
+        imageView.image = image
+        
+        // Take image picker off the screen
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
