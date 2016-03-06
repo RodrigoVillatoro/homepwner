@@ -13,6 +13,32 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     var imageStore: ImageStore!
     
+    // MARK: - Initializer
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
+    }
+    
+    // MARK: - View life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
+    
+    // MARK: - Actions
+    
     @IBAction func addNewItem(sender: AnyObject) {
         // Create new item and add it to the store
         let newItem = itemStore.createItem()
@@ -25,11 +51,19 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        navigationItem.leftBarButtonItem = editButtonItem()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowItem" {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                // Get item of selected row and pass it along
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destinationViewController as! DetailViewController
+                detailViewController.item = item
+                detailViewController.imageStore = imageStore
+            }
+        }
     }
+    
+    // MARK: - UITableViewDataSource methods
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
@@ -56,13 +90,6 @@ class ItemsViewController: UITableViewController {
         
         return cell
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 65
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -96,25 +123,7 @@ class ItemsViewController: UITableViewController {
         // Update the model
         itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowItem" {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                // Get item of selected row and pass it along
-                let item = itemStore.allItems[row]
-                let detailViewController = segue.destinationViewController as! DetailViewController
-                detailViewController.item = item
-                detailViewController.imageStore = imageStore
-            }
-        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
-    }
-    
+
 }
 
 
