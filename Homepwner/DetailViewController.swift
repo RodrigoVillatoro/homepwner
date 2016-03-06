@@ -39,6 +39,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             navigationItem.title = item.name
         }
     }
+    var imageStore: ImageStore!
     
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
@@ -62,6 +63,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.stringFromNumber(item.valueInDollars)
         dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
+        
+        // Get the item key
+        let key = item.itemKey
+        
+        // If there is an associated image, display it
+        let imageToDisplay = imageStore.imageForKey(key)
+        imageView.image = imageToDisplay
         
     }
     
@@ -91,6 +99,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         // Get picked image from dictionary
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Store the image in the ImageStore for the item's key
+        imageStore.setImage(image, forKey: item.itemKey)
         
         // Put that image on the screen
         imageView.image = image
